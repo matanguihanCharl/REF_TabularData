@@ -83,6 +83,20 @@
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "0f6031ec-1fbe-4edf-83a1-b7d43bc23f7c",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\UiDemo_OpenTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "021582d7-bad0-4126-81b9-764295faaf92",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\UiDemo_AddTransactionTestCase.xaml"
       }
     ],
     "modernBehavior": true
