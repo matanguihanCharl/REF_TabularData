@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ProcessTestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1130,2662" sap2010:WorkflowViewState.IdRef="REFTestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ProcessTestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1056,2664" sap2010:WorkflowViewState.IdRef="REFTestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>Microsoft.VisualBasic</x:String>
@@ -96,15 +96,11 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Verify if the Process workflow works as expected.&#xA;The verification should check whether the output of the Process workflow is the expected one." DisplayName="ProcessTestCase" sap:VirtualizedContainerService.HintSize="754,2597" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Verify if the Process workflow works as expected.&#xA;The verification should check whether the output of the Process workflow is the expected one." DisplayName="ProcessTestCase" sap:VirtualizedContainerService.HintSize="754,2599" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="sd:DataRow" Name="TransactionItem" />
-      <Variable x:TypeArguments="x:Int32" Name="TransactionNumber">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="1" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="TransactionNumber" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -141,15 +137,9 @@
       </Assign>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetTransactionData workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\GetTransactionData.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
-            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
-          </InArgument>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-          </InArgument>
-          <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_TransactionItem">
-            <VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="TransactionItem" />
-          </OutArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[TransactionNumber]</InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+          <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_TransactionItem">[TransactionItem]</OutArgument>
           <OutArgument x:TypeArguments="x:String" x:Key="out_TransactionField1" />
           <OutArgument x:TypeArguments="x:String" x:Key="out_TransactionField2" />
           <OutArgument x:TypeArguments="x:String" x:Key="out_TransactionID" />
@@ -174,7 +164,7 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="692,1356" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="692,1358" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,13 +182,13 @@
           </Sequence>
         </ui:CommentOut.Body>
       </ui:CommentOut>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: UIDemo" sap:VirtualizedContainerService.HintSize="630,671" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f62a4914-7bca-42f8-b037-ba1463e34b02" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: UIDemo" sap:VirtualizedContainerService.HintSize="630,673" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f62a4914-7bca-42f8-b037-ba1463e34b02" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="596,380" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="596,382" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="ExtractedTransantionNumber" />
               </Sequence.Variables>
@@ -223,7 +213,7 @@
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable CvType="AnyWordGroup" DesignTimeRectangle="521, 126, 47, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'648332'" FullSelectorArgument="&lt;ctrl automationid='transnrlabel' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='transnrlabel' role='text' /&gt;" Guid="4af26c7d-cb99-49fb-8f65-3d1d6ef1d4b0" InformativeScreenshot="fe901df4fd2c9f8849d76d82656be307.png" ScopeSelectorArgument="&lt;wnd app='uidemo.exe' cls='HwndWrapper*' title='UIDemo' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target CvTextArgument="Transaction #:" CvType="Text" DesignTimeRectangle="428, 126, 88, 16" ElementType="Text" FriendlyName="'Transaction #'" FullSelectorArgument="&lt;ctrl name='Transaction #:' role='text' /&gt;&lt;ctrl name='Transaction #:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Transaction #:' role='text' /&gt;&lt;ctrl name='Transaction #:' role='text' automationid='' check:text='Transaction #:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAUCAYAAAAA5FpZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHdSURBVFhH7ZXZscMgDEUpyh1RDr24EffiFnhPAqHL5iVOGH/wcWdMZG1HCjb7vvupcZrAB2sCH6wJfLAm8MFKwFdrvDE9Ld5ttfM7tXm3GG9XOa/e/veg52+L8ikf4niUq73hq/VmcX5r2V6vEvivRQO1fuXnHH5LN4CHwM4tYeujfZOzCPzYZh0DEPviNo25Ob+Ab2aL4MRW28PmJrtdK5/wfrnhRVz2izauB3oknS0esUoxEH7sv/C/CTwvMMDWBAJQwMgwUrMUN11PJQg8RyhVLvENdh0AnsPztbjFWRYgA1gOOkh6a6u/5beBayMt5SDqCWOMK/FADCM2woODQWc6AN7yw7j4HO38bYPBl8I7m/ptDQf1HeDciE74GvBiSzpN5R/zAKOOi+oDb/uR/VPg5KsDPPtgkp4BT6ClyDsbDoKBiW8CLf4A4w3AOVasuVYeA/UIOBWT/4U+BB6l7wMEsSMMHtALrhSKJzby7S6B6jFwLEa28hrwMh4Oq7SFc/+jibUcAI82rbk43wRO/aUaEP6BHt7hAiKIknOB0fd0w3nj1D8rOLMRhOCrkPPcmIfz0m8cr6w7QhY/zHkLOMXRdzP4UXX/PeBTP9MEPlgT+GBN4IM1gQ/V7v8A3U2Qsff5QZoAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>

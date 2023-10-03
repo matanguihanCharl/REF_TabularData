@@ -1,5 +1,6 @@
 {
   "name": "REF_TabularData",
+  "projectId": "4e24d976-ffbb-4344-a173-8ab2eb6f35c1",
   "description": "Robotic Enterprise Framework using Tabular Data",
   "main": "Main.xaml",
   "dependencies": {
@@ -99,7 +100,8 @@
         "fileName": "Tests\\UiDemo_AddTransactionTestCase.xaml"
       }
     ],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
